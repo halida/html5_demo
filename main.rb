@@ -25,6 +25,7 @@ get '/' do
 end
 
 FILES = `find views`.split
+puts FILES
 def check_file file, ext
   FILES.member? "views/#{file}#{ext}"
 end
