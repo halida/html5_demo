@@ -1,0 +1,16 @@
+*.orig
+*.pyc
+*_ui.py
+*~
+*.qm
+*.log
+*.txt
+*.cfg
+*.bak
+
+*.o
+*.so
+
+Gemfile.lock
+
+.sass-cache
