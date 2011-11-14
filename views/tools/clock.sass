@@ -1,0 +1,86 @@
+@import "../base"
+
+$base-size: 380px
+$sec-p-width: 3px
+$sec-p-length: 150px
+$min-p-width: 3px
+$min-p-length: 130px
+$hour-p-width: 3px
+$hour-p-length: 100px
+
+$c-body: #ffffff
+$c-base: #cae6e8
+$c-base-in: #a2aba5
+$c-sec: #595855
+$c-min: #2b2e2e
+$c-hour: #313f54
+
+body
+  height: 100%
+  background: $c-body
+  .title
+    text-align: center
+    font-size: 28px
+    margin: 10px
+
+#clock-base
+  display: block
+  position: relative
+  width: 400px
+  height: 400px
+  margin: 100px auto
+  +border-radius(200px)
+  +single-box-shadow
+  background: $c-base
+
+#clock-base-inner
+  position: absolute
+  top: 10px
+  left: 10px
+
+  display: block
+  width: $base-size
+  height: $base-size
+  +border-radius($base-size / 2)
+  +single-box-shadow
+  background: $c-base-in
+
+#sec-pointer, #min-pointer, #hour-pointer
+  +transition-property(all)
+  +transition-duration(0.5s)
+  +transition-timing-function(ease-in)
+
+#sec-pointer
+  width: $sec-p-width
+  height: $sec-p-length * 2
+  position: absolute
+  top: $base-size / 2 - $sec-p-length
+  left: $base-size / 2 - $sec-p-width / 2
+
+  #sec-pointer-inner
+    height: $sec-p-length
+    background: $c-sec
+
+#min-pointer
+  width: $min-p-width
+  height: $min-p-length * 2
+  position: absolute
+  top: $base-size / 2 - $min-p-length
+  left: $base-size / 2 - $min-p-width / 2
+
+  #min-pointer-inner
+    height: $min-p-length
+    background: $c-min
+
+#hour-pointer
+  width: $hour-p-width
+  height: $hour-p-length * 2
+  position: absolute
+  top: $base-size / 2 - $hour-p-length
+  left: $base-size / 2 - $hour-p-width / 2
+
+  #hour-pointer-inner
+    height: $hour-p-length
+    background: $c-hour
+
+
