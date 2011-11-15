@@ -1,0 +1,31 @@
+<script type="text/javascript" src="/jquery.scrollTo-min.js"></script>
+<script type="text/javascript" src="/localscroll.js"></script>
+<script type="text/javascript" src="/jquery.appear-min.js"></script>
+<link rel="stylesheet" href="/exp/wall.css" />
+<script type="text/javascript" src="/exp/wall.js"></script>
+
+#left-panel
+  %ul
+    %li work
+    %li job
+    %li food
+
+#top-panel
+  haha
+
+#bak
+  .block
+    %img.image{src: "http://img.duitang.com/uploads/item/201109/01/20110901231816_YtBzK.jpg!200x0.jpg"}
+    .desc= "fda fdsa " * 13
+
+#wall
+  #wall-inner
+    - for i in 1..10
+      .block
+        %img.image{src: "http://img.duitang.com/uploads/item/201109/01/20110901231816_YtBzK.jpg!200x0.jpg"}
+        .desc= "fda fdsa " * 13
+  .more
+    %img{src: "/ajax-loader.gif"}
+
+:javascript
+  wall_init();
