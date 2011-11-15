@@ -1,0 +1,33 @@
+@import "../base"
+
+nav
+  position: fixed
+  top: 30px
+  left: 100px
+  font-weight: bold
+  a
+    display: block
+    padding: 10px
+    margin: 4px
+    +border-radius(4px)
+    &:hover
+      background: gray
+      color: white
+      +single-box-shadow
+      text-decoration: none
+  a.appear
+    background: black
+    color: white
+    +single-box-shadow
+
+#articles
+  margin-left: 240px
+  margin-top: 40px
+
+.article
+  margin: 10px 20px 50px
+  width: 300px
+
+a
+  cursor: pointer
+

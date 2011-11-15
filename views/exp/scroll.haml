@@ -1,0 +1,54 @@
+<script type="text/javascript" src="/jquery.scrollTo-min.js"></script>
+<script type="text/javascript" src="/localscroll.js"></script>
+<script type="text/javascript" src="/jquery.appear-min.js"></script>
+<link rel="stylesheet" href="/exp/scroll.css" />
+
+- articles = 15
+
+%nav
+  - for i in 1..articles
+    %a{href: "#article#{i}"}= "article#{i}"
+
+#articles
+  - for i in 1..articles
+    .article{id: "article#{i}"}
+      %a{name: "article#{i}"}
+        %h1= "article#{i}"
+      %p
+        fdsafdsa fdsa kldsalk fdsa kdflsa kldfsa kfdklsa jlkdfjksal klfdsakl jldksaj kdjlksaj kldsajkl kldsaj kljsdkalf 
+        fdsafdsa fdsa kldsalk fdsa kdflsa kldfsa kfdklsa jlkdfjksal klfdsakl jldksaj kdjlksaj kldsajkl kldsaj kljsdkalf 
+        fdsafdsa fdsa kldsalk fdsa kdflsa kldfsa kfdklsa jlkdfjksal klfdsakl jldksaj kdjlksaj kldsajkl kldsaj kljsdkalf 
+        fdsafdsa fdsa kldsalk fdsa kdflsa kldfsa kfdklsa jlkdfjksal klfdsakl jldksaj kdjlksaj kldsajkl kldsaj kljsdkalf 
+
+:javascript
+  $.localScroll({
+    target: 'body', // could be a selector or a jQuery object too.
+    queue:true,
+    duration:300,
+    hash:true,
+    onBefore:function( e, anchor, $target ){
+    },
+    onAfter:function( anchor, settings ){
+    }
+  });
+
+  function isScrolledIntoView(elem)
+  {
+    var docViewTop = $(window).scrollTop();
+    var docViewBottom = docViewTop + $(window).height();
+
+    var elemTop = $(elem).offset().top;
+    var elemBottom = elemTop + $(elem).height();
+
+    return ((elemBottom >= docViewTop) && (elemTop <= docViewBottom));
+  }
+  $(window).scroll(function(){
+    $('nav a').removeClass('appear');
+    $('nav a').each(function(){
+      var item = $(this);
+      var target = $(item.attr('href'));
+      if(isScrolledIntoView(target))
+        item.addClass('appear');
+    });
+  });
+  
