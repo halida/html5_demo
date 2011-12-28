@@ -1,0 +1,62 @@
+@import "base"
+
+#screen
+  overflow: hidden
+  background: #F7F8F8
+  position: relative
+
+#board, #collection
+  +transition(height, 0.3s)
+
+#board
+  height: 90%
+  background: #F0F0E0
+  position: relative
+  #left, #right
+    width: 20px
+    height: 20px
+    padding: 10px
+    position: absolute
+    top: 40%
+    background: yellow
+    cursor: pointer
+  #left
+    left: 10px
+  #right
+    right: 10px
+
+  #displayer
+    padding-top: 40px
+    margin-left: auto
+    margin-right: auto
+    text-align: center
+    img
+      width: 300px
+
+
+#middle
+  width: 100%
+  text-align: center
+  height: 0px
+  #bar
+    z-index: 30
+    width: 40px
+    height: 40px
+    position: relative
+    top: -20px  
+    background: blue
+    margin: 0 auto
+    cursor: pointer
+  
+#collection
+  height: 90%
+  background: #E03052
+
+  .images
+    padding-top: 15%
+    padding: 80px 40px 20px
+    img
+      float: left
+      padding: 10px
+      height: 300px  
+      height:auto

@@ -1,0 +1,23 @@
+-# <script type="text/javascript" src="/jquery.scrollTo-min.js"></script>
+-# <script type="text/javascript" src="/localscroll.js"></script>
+-# <script type="text/javascript" src="/jquery.appear-min.js"></script>
+<link rel="stylesheet" href="/exp/album.css" />
+<script type="text/javascript" src="/exp/album.js"></script>
+
+#screen
+  #board
+    #left
+    #right
+    #displayer
+      %img.current-display-img{src:""}
+
+  #middle      
+    #bar
+
+  #collection
+    .images
+      - 10.times do
+        %img{src:"/images/1.jpg"}
+        %img{src:"/images/2.jpg"}
+
+
